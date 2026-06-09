@@ -1,0 +1,9 @@
+{
+  "name": "flowlity",
+  "plugins": [
+    {
+      "id": "flowlity-supply-chain-coplanner",
+      "path": "./plugins/flowlity-coplanner"
+    }
+  ]
+}

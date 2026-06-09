@@ -1,0 +1,22 @@
+{
+  "name": "flowlity-supply-chain-coplanner",
+  "version": "0.1.0",
+  "description": "Jump-start kit for new Flowlity Coplanner users: bundles the Flowlity Coplanner connector with ready-to-run data-quality, forecast-quality, and supply-chain operations review skills, plus a getting-started guide.",
+  "author": {
+    "name": "Flowlity"
+  },
+  "homepage": "https://www.flowlity.com",
+  "repository": "https://www.flowlity.com",
+  "license": "LicenseRef-Proprietary",
+  "keywords": [
+    "flowlity",
+    "coplanner",
+    "supply-chain",
+    "inventory",
+    "demand-forecasting",
+    "data-quality",
+    "supply-planning",
+    "s&op",
+    "ordering"
+  ]
+}
