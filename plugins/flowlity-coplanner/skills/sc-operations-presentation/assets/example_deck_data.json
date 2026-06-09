@@ -1,0 +1,127 @@
+{
+  "meta": { "company": "DemoCompany", "site": "Main DC", "period": "Q2 2026", "currency": "EUR" },
+  "brand": {
+    "ink": "1B2A38",
+    "accent": "2F6FB0",
+    "wordmark": { "main": "DEMO", "suffix": "CO" },
+    "linkBase": "https://app.flowlity.com/planning/products/planning/products/"
+  },
+  "cover": {
+    "title1": "Supply Chain",
+    "title2": "Operations Review",
+    "subtitle": "Main DC  —  inventory health, cash at risk & supply outlook",
+    "date": "Q2 2026",
+    "footer": "Powered by Flowlity"
+  },
+  "exec": {
+    "kpis": [
+      { "v": "€3.20M", "l": "Total stock value", "sub": "1,500 active SKUs", "color": "CHAR", "bar": "STEEL" },
+      { "v": "2.0%", "l": "Avg zero-stock risk (1yr)", "sub": "availability healthy", "color": "GREEN", "bar": "GREEN" },
+      { "v": "€120K", "l": "Firm demand · next 30d", "sub": "80K units on order", "color": "CHAR", "bar": "STEEL" },
+      { "v": "~€90K", "l": "Stock above Flowlity's Max", "sub": "act-now overstock", "color": "AMBER", "bar": "AMBER" }
+    ],
+    "banner": [
+      { "text": "Overall health: solid availability and a stable range — ", "color": "CHAR" },
+      { "text": "but ~€0.4M sits in slow, over-buffered stock", "color": "AMBER", "bold": true },
+      { "text": " generating little demand.", "color": "CHAR" }
+    ],
+    "decisions": [
+      ["Clear above-Max items", "cancel / defer firm POs on the worst, destock the rest (~€90K)."],
+      ["Review wide buffers", "slow stock sits below an over-generous Max — tighten, then destock."],
+      ["Manage the C tail with buffers", "C-class forecasts are weak; rely on buffers, not forecast precision."]
+    ]
+  },
+  "inventory": {
+    "title": "Where the inventory sits",
+    "subtitle": "Stock value by ABCD class — and the five SKUs holding the most cash, with their days of cover",
+    "splitA": {
+      "title": "By ABCD class (€M stock value)",
+      "labels": ["D · 900", "C · 200", "B · 200", "A · 500 SKUs"],
+      "values": [0.60, 0.20, 0.30, 2.10],
+      "colors": ["AMBER", "STEEL", "STEEL", "GREEN"], "fmt": "€0.00\"M\"", "max": 2.5,
+      "note": [ { "text": "A-class is 66% of value on ~28% of SKUs", "color": "2E9E5B", "bold": true },
+                { "text": " — value is concentrated in the core range.", "color": "555C66" } ]
+    },
+    "topTitle": "Top 5 SKUs by stock value",
+    "topSkus": [
+      { "name": "Product Alpha", "id": 1001, "qty": "9,500", "value": "€48.0K", "cover": "300 d", "coverFlag": true },
+      { "name": "Product Bravo", "id": 1002, "qty": "1,200", "value": "€45.0K", "cover": "40 d", "coverFlag": false },
+      { "name": "Product Charlie", "id": 1003, "qty": "7,000", "value": "€42.0K", "cover": ">3,650 d", "coverFlag": true },
+      { "name": "Product Delta", "id": 1004, "qty": "300", "value": "€38.0K", "cover": "150 d", "coverFlag": false },
+      { "name": "Product Echo", "id": 1005, "qty": "260", "value": "€35.0K", "cover": "320 d", "coverFlag": true }
+    ],
+    "topCaption": "Cover = days of stock at current demand (Flowlity). Amber = >9 months on hand; >3,650 d ≈ no demand (dead). Names link to Flowlity."
+  },
+  "cash": {
+    "title": "Cash & working capital at risk",
+    "bigValue": "~€90K", "bigLabel": "stock above Flowlity's Max buffer — the validated, act-now overstock",
+    "facts": [ ["~€30K", "above max WITH a firm PO → cancel / defer"], ["~€60K", "above max, no PO → destock"], ["wide Max", "ceilings set high (long lead + MOQ) — little is technically over"] ],
+    "bigNote": "Validated via projected Stock vs Max per SKU. Most 'high cover' on firm 30-day demand is a mirage — on real demand the big balances turn fine.",
+    "headline": [ { "text": "Genuine above-max overstock is small. ", "color": "RED", "bold": true },
+                  { "text": "The bigger pool is slow stock sitting just BELOW a generously-set Max — the lever there is tightening the buffer settings, then destocking.", "color": "CHAR" } ],
+    "tableTitle": "Validated positions (top stock-value SKUs)", "tableCol": "Stock €",
+    "items": [
+      { "name": "Product Charlie", "id": 1003, "cover": "no demand", "action": "Review buffer", "value": "€42,000" },
+      { "name": "Product Echo", "id": 1005, "cover": "11 mo", "action": "Cancel PO", "value": "€35,000" },
+      { "name": "Product Foxtrot", "id": 1006, "cover": "26 mo", "action": "Destock", "value": "€28,000" },
+      { "name": "Product Golf", "id": 1007, "cover": "17 mo", "action": "Review buffer", "value": "€22,000" }
+    ],
+    "caption": "Cover = stock ÷ real (forecast) demand. 'Above max' = projected stock over Flowlity's Max ceiling; firm PO = confirmed order. Validated on top stock-value SKUs. Names link to Flowlity."
+  },
+  "availability": {
+    "title": "Availability & supply risk",
+    "kpis": [
+      { "v": "2.0%", "l": "avg zero-stock risk (1yr) — healthy, watch the tail", "color": "GREEN" },
+      { "v": "120", "l": "SKUs under 5 days of cover — short-term watch-list", "color": "AMBER" }
+    ],
+    "riskTitle": "Where the risk sits — avg zero-stock risk by ABCD class",
+    "risk": { "labels": ["A-class", "B-class", "C-class", "D-class", "Spare parts"], "values": [1.5, 2.0, 2.4, 3.1, 4.2], "colors": ["GREEN", "GREEN", "GREEN", "GREEN", "AMBER"], "fmt": "0.0\"%\"", "max": 5 },
+    "exposedTitle": "Most exposed SKUs (zero stock, demand booked)",
+    "exposed": [
+      { "name": "Product Hotel", "id": 1008, "po": "500 · 24 Jul 26", "status": "On track" },
+      { "name": "Product India", "id": 1009, "po": "60 · 7 Sep 26", "status": "Slipped 90 d" },
+      { "name": "Product Juliet", "id": 1010, "po": "100 · 1 Sep 26", "status": "On track" },
+      { "name": "Product Kilo", "id": 1011, "po": "1 · 9 Jun 26", "status": "Slipped 28 d" }
+    ],
+    "caption": "All have firm POs placed; none past its delivery date, but the next delivery is weeks out while stock is zero. Names link to Flowlity."
+  },
+  "newForecast": {
+    "title": "Stock health & forecast quality",
+    "stockTitle": "Working-capital split — €3.20M total stock",
+    "stockSub": "Across 1,500 SKUs — measured against Flowlity's Max buffer ceilings",
+    "stockSegments": [
+      { "label": "Within Flowlity Max buffers", "value": "≈€2.71M", "pct": "85%", "count": "~1,200 SKUs", "color": "GREEN", "frac": 0.85 },
+      { "label": "Slow stock below a wide Max — review buffer", "value": "≈€0.40M", "pct": "12%", "count": "examples", "color": "STEEL", "frac": 0.12 },
+      { "label": "Above Max — act now", "value": "~€90K", "pct": "3%", "count": "300 SKUs flagged", "color": "AMBER", "frac": 0.03 }
+    ],
+    "stockNote": "300 SKUs are flagged above Max, but the cash is concentrated: ~€90K of excess is quantified on the largest (the alert's projected 'excess €' over-states, so isn't summed). The ~€0.40M slow tail sits below a wide Max (illustrative). Counts are SKU counts; € validated on top stock-value SKUs.",
+    "mapeTitle": "Forecast accuracy — 3-month MAPE by ABC class",
+    "accuracyClass": [
+      { "label": "A-class", "value": 35, "text": "~35%", "color": "GREEN" },
+      { "label": "B-class", "value": 45, "text": "~45%", "color": "GREEN" },
+      { "label": "C-class", "value": 130, "text": "~130%", "color": "AMBER" }
+    ],
+    "accuracyMax": 150,
+    "mapeNote": "Median 3-mo MAPE, sampled SKUs per class. A & B (steady movers) forecast reasonably (~35–45%); C degrades sharply — intermittent demand inflates the %. Manage C with buffers, not forecast precision.",
+    "trendTitle": "Direction of travel — last 12 months",
+    "classNote": [
+      { "text": "How items are flagged — ", "color": "CHAR", "bold": true },
+      { "text": "Above Max: ", "color": "AMBER", "bold": true },
+      { "text": "projected stock stays above Flowlity's Max buffer over the coming months (not cleared by near-term demand) → act now (cancel PO / destock).   ", "color": "MUTE" },
+      { "text": "Slow stock below a wide Max: ", "color": "STEEL", "bold": true },
+      { "text": "stock sits below Max but, at current demand, won't be consumed within ~12 months — the Max ceiling is set too wide to flag it → review / tighten the buffer, then destock.", "color": "MUTE" }
+    ],
+    "trend": {
+      "title": "Stock value — last 12 months",
+      "rightTitle": "Reading the trend",
+      "rightBody": [ { "text": "Stock value held in a €3.0–3.4M band over the year and sits at €3.20M now — broadly stable. ", "color": "CHAR" }, { "text": "No structural build-up or draw-down: the inventory base is steady, so the opportunity is mix (above-max + buffers), not the overall level.", "color": "MUTE" } ],
+      "note": "Stock value held €3.0–3.4M, now €3.20M — broadly stable.",
+      "labels": ["Jun","Jul","Aug","Sep","Oct","Nov","Dec","Jan","Feb","Mar","Apr","May"],
+      "yfmt": "\"€\"0.0\"M\"", "ymin": 0, "ymax": 4,
+      "series": [
+        { "name": "Stock value (€)", "color": "GREEN",
+          "values": [3.05, 3.10, 3.02, 3.08, 3.12, 3.18, 3.22, 3.30, 3.35, 3.28, 3.22, 3.20] }
+      ]
+    }
+  }
+}
