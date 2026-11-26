@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "flowlity": {
+      "type": "http",
+      "url": "https://co-planner.app.flowlity.com/mcp"
+    }
+  }
+}

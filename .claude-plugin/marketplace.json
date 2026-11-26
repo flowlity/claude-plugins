@@ -1,0 +1,18 @@
+{
+  "name": "flowlity",
+  "owner": {
+    "name": "Flowlity",
+    "email": "support@flowlity.com",
+    "url": "https://www.flowlity.com"
+  },
+  "metadata": {
+    "description": "Flowlity's Claude Code plugins: supply-chain planning skills on top of the Flowlity Co-Planner connector."
+  },
+  "plugins": [
+    {
+      "name": "flowlity-supply-chain-coplanner",
+      "source": "./plugins/flowlity-coplanner",
+      "description": "Jump-start kit for new Flowlity users: the Flowlity Co-Planner connector plus data-quality, forecast-quality and operations review skills."
+    }
+  ]
+}

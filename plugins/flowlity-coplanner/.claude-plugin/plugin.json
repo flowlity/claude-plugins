@@ -1,0 +1,29 @@
+{
+  "name": "flowlity-supply-chain-coplanner",
+  "displayName": "Flowlity Supply Chain Coplanner",
+  "version": "0.2.0",
+  "description": "Jump-start kit for new Flowlity users: bundles the Flowlity Co-Planner connector with ready-to-run data-quality, forecast-quality, and supply-chain operations review skills, plus a getting-started guide.",
+  "author": {
+    "name": "Flowlity",
+    "email": "support@flowlity.com",
+    "url": "https://www.flowlity.com"
+  },
+  "homepage": "https://docs.flowlity.com/ai-and-automations/co-planner/mcp",
+  "repository": "https://github.com/flowlity/claude-plugins",
+  "license": "LicenseRef-Proprietary",
+  "icon": "./.claude-plugin/icon.png",
+  "documentationUrl": "https://docs.flowlity.com/ai-and-automations/co-planner/mcp",
+  "supportUrl": "https://www.flowlity.com/contact",
+  "privacyPolicyUrl": "https://www.flowlity.com/privacy-policy",
+  "keywords": [
+    "flowlity",
+    "coplanner",
+    "supply-chain",
+    "inventory",
+    "demand-forecasting",
+    "data-quality",
+    "supply-planning",
+    "s&op",
+    "ordering"
+  ]
+}
