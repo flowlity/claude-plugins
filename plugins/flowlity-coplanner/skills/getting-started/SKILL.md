@@ -1,7 +1,7 @@
 ---
 name: getting-started
 description: >
-  Orients a brand-new Flowlity Coplanner user: explains what the Coplanner
+  Orients a brand-new Flowlity Coplanner user: explains what the Co-Planner
   connector can do, runs a quick connection check against their account, and
   offers a short menu of high-value first actions (data-quality audit, forecast
   audit, supply-chain operations review). Use this skill whenever someone is new
@@ -25,7 +25,7 @@ the user has run something real against their own data.
 
 ## Principles
 
-- **Verify before promising.** Always confirm the Coplanner connector responds
+- **Verify before promising.** Always confirm the Co-Planner connector responds
   and name the account before describing capabilities, so the user sees it is
   live against *their* data, not a generic pitch.
 - **Show, don't lecture.** Offer 3–4 concrete things to try, each phrased as a
@@ -38,15 +38,16 @@ the user has run something real against their own data.
 ## Workflow
 
 ### 1. Connection check
-Call `list_sites` on the Flowlity Coplanner connector.
+Call `list_sites` on the Flowlity Co-Planner connector.
 
 - **If it returns sites:** capture every accessible `site_id`, the company name,
   and currency. Report in one line, e.g. "You're connected to *DemoCompany*
   (2 sites, EUR)."
 - **If it fails or returns nothing:** tell the user the connector isn't responding
-  yet, and suggest they confirm the Flowlity Coplanner connector is enabled and
-  authorized in their connector settings. Do not continue to step 2 with invented
-  data.
+  yet, and suggest they confirm the Flowlity Co-Planner connector is enabled and
+  signed in (in Claude Code: run `/mcp` and authenticate the `flowlity` server;
+  in the Claude apps: their connector settings). Do not continue to step 2 with
+  invented data.
 
 ### 2. One-line account snapshot (optional, fast)
 If sites resolved and it's cheap, pull a single high-level read so the tour feels
@@ -87,4 +88,4 @@ the closing short — one or two sentences.
   user which account they're now on.
 - This plugin pairs the getting-started tour with three deep skills
   (`data-quality-audit`, `forecast-audit`, `sc-operations-presentation`) and the
-  Flowlity Coplanner connector. Point power users to those directly once oriented.
+  Flowlity Co-Planner connector. Point power users to those directly once oriented.

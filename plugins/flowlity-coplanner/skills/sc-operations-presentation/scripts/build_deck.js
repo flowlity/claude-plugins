@@ -192,7 +192,7 @@ segs.forEach(g=>{ const w=sbW*(g.frac||0); if(w>0.002){ s.addShape(p.shapes.RECT
 const lgY=sbY+sbH+0.13;
 segs.forEach((g,i)=>{ const ly=lgY+i*0.285;
   s.addShape(p.shapes.RECTANGLE,{x:0.8,y:ly+0.02,w:0.17,h:0.17,fill:{color:col(g.color)}});
-  s.addText([{text:g.label+"   ",options:{bold:true,color:CHAR}},{text:g.value+(g.pct?("  ("+g.pct+")")+""):""+(g.count?("   ·  "+g.count):"")}],{x:1.05,y:ly-0.04,w:5.45,h:0.27,fontFace:"Arial",fontSize:11,valign:"middle",margin:0}); });
+  s.addText([{text:g.label+"   ",options:{bold:true,color:CHAR}},{text:g.value+(g.pct?("  ("+g.pct+")"):"")+(g.count?("   ·  "+g.count):"")}],{x:1.05,y:ly-0.04,w:5.45,h:0.27,fontFace:"Arial",fontSize:11,valign:"middle",margin:0}); });
 s.addText(nf.stockNote||"",{x:0.78,y:lgY+segs.length*0.285+0.04,w:5.7,h:0.42,fontFace:"Arial",fontSize:8.5,italic:true,color:MUTE,margin:0});
 
 // Top-right: forecast accuracy — aggregate KPI cards (or fallback to bars)

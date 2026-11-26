@@ -20,7 +20,7 @@ Official Claude Code plugin marketplace for [Flowlity](https://www.flowlity.com)
 
 ### flowlity-supply-chain-coplanner
 
-A jump-start kit for new **Flowlity Coplanner** users. Bundles the Flowlity Coplanner MCP connector with four ready-to-run skills:
+A jump-start kit for new **Flowlity Coplanner** users. Bundles the Flowlity Co-Planner MCP connector with four ready-to-run skills:
 
 | Skill | What it does |
 |---|---|
@@ -35,4 +35,4 @@ A jump-start kit for new **Flowlity Coplanner** users. Bundles the Flowlity Copl
 - "Run a data-quality audit on my items" — surfaces the top master-data defects to fix
 - "Create a supply-chain operations review deck" — builds a ready-to-present PowerPoint from live data
 
-> **Requires** an active Flowlity Coplanner account with the connector (`https://mcp.app.flowlity.com`) authorized. See [`plugins/flowlity-coplanner/README.md`](plugins/flowlity-coplanner/README.md) for full setup details.
+> **Requires** an active Flowlity account, signed in to the Flowlity Co-Planner MCP server (`https://co-planner.app.flowlity.com/mcp`, the same server as the Flowlity Co-Planner connector in Claude's directory). See [`plugins/flowlity-coplanner/README.md`](plugins/flowlity-coplanner/README.md) for setup, and for what the plugin runs, sends and fetches.

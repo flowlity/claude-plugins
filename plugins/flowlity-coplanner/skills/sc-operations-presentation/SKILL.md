@@ -27,10 +27,17 @@ schema and the Flowlity tool→field mapping (with gotchas) are in
 
 ## Before you start
 This skill is self-contained: the bundled `scripts/build_deck.js` already encapsulates all
-pptxgenjs rendering, so no external base `pptx` skill is required. Install the two runtime
-dependencies once in the working dir: `npm install pptxgenjs` and
-`pip install Pillow --break-system-packages`. (If a base `pptx` skill happens to be present in
-your environment you may consult its `pptxgenjs.md` for extra QA tips — optional, not required.)
+pptxgenjs rendering, so no external base `pptx` skill is required. It needs two runtime
+dependencies, installed once in the working dir from the public npm and PyPI registries, at the
+versions the scripts are tested with:
+- `npm install pptxgenjs@4.0.1`
+- Pillow 13.0.0 for `generate_assets.py`. Skip this if `python3 -c "import PIL"` already works.
+  Otherwise install it in a virtual environment, never into the system Python:
+  `python3 -m venv .venv && .venv/bin/pip install Pillow==13.0.0`, then run the script with
+  `.venv/bin/python` instead of `python3`.
+
+(If a base `pptx` skill happens to be present in your environment you may consult its
+`pptxgenjs.md` for extra QA tips — optional, not required.)
 
 ## Workflow
 
@@ -166,9 +173,12 @@ Pull per the tool→field map in `references/flowlity-data.md`. Critical rules:
 Write `deck_data.json` (schema in the reference; copy `${CLAUDE_PLUGIN_ROOT}/skills/sc-operations-presentation/assets/example_deck_data.json` and
 replace values). Then, in the working dir:
 ```
-python "${CLAUDE_PLUGIN_ROOT}/skills/sc-operations-presentation/scripts/generate_assets.py" --config deck_data.json --out .
-node "${CLAUDE_PLUGIN_ROOT}/skills/sc-operations-presentation/scripts/build_deck.js" deck_data.json "./<Company>_SC_Operations_Review.pptx"
+python3 "${CLAUDE_PLUGIN_ROOT}/skills/sc-operations-presentation/scripts/generate_assets.py" --config deck_data.json --out .
+NODE_PATH="$PWD/node_modules" node "${CLAUDE_PLUGIN_ROOT}/skills/sc-operations-presentation/scripts/build_deck.js" deck_data.json "./<Company>_SC_Operations_Review.pptx"
 ```
+`NODE_PATH` is what lets the bundled script find the `pptxgenjs` installed in the working dir:
+Node looks for modules next to the script, not in the current directory. (Leave it out only if
+`pptxgenjs` is installed globally and already resolvable.)
 Then save the finished `<Company>_SC_Operations_Review.pptx` to the user's outputs folder and
 present it. (Build in the working dir first, as some environments restrict direct writes to the
 outputs folder.)

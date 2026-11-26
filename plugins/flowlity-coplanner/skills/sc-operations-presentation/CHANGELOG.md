@@ -153,3 +153,16 @@ Two corrections after live review caught false positives (e.g. a slow SKU wrongl
   examples now use placeholders (e.g. "DemoCompany", "a slow SKU", "a few hundred SKUs").
 - Rule: customer names, product names, KPIs, site IDs and brand hexes are confidential and must
   never appear in the skill — only in the generated customer deck.
+
+---
+
+## Update 9 — the build runs again; pinned dependencies
+
+- **scripts/build_deck.js:** fixed a syntax error in the slide-6 legend line (unbalanced
+  parentheses around the `pct` / `count` suffixes) that stopped the script before it wrote
+  anything. The legend reads `value  (pct)   ·  count`, each part only when present.
+- **SKILL.md:** dependencies pinned to the tested versions (`pptxgenjs@4.0.1`, `Pillow==13.0.0`);
+  Pillow goes into a virtual environment instead of `pip install --break-system-packages`; the
+  build runs `build_deck.js` with `NODE_PATH="$PWD/node_modules"`, because Node resolves
+  `require("pptxgenjs")` from the script's own folder, not from the working dir.
+- Checked by building `assets/example_deck_data.json` into a 6-slide deck with those versions.

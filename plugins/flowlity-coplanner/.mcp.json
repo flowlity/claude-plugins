@@ -2,8 +2,7 @@
   "mcpServers": {
     "flowlity": {
       "type": "http",
-      "url": "https://mcp.app.flowlity.com",
-      "client_id": "zsfXXLTTSVDWpLyCexpOsEHHEufUnwKv"
+      "url": "https://co-planner.app.flowlity.com/mcp"
     }
   }
 }
